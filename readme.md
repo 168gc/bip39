@@ -91,3 +91,25 @@ $ jasmine spec/tests.js
 
 This BIP39 tool is released under the terms of the MIT license. See LICENSE for
 more information or see https://opensource.org/licenses/MIT.
+
+## Push with HTTPS token
+
+If your local repository does not have `origin` configured yet, add it first:
+
+```bash
+git remote add origin https://<YOUR_TOKEN>@github.com/168gc/seedvault.git
+```
+
+If `origin` already exists, update it:
+
+```bash
+git remote set-url origin https://<YOUR_TOKEN>@github.com/168gc/seedvault.git
+```
+
+Push your branch:
+
+```bash
+git push -u origin main
+```
+
+Security note: use a fine-grained personal access token with the minimum required scope, and rotate/revoke it if exposed.
